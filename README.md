@@ -8,11 +8,11 @@ El servidor esta preparado para desplegarlo en OpenShift.
 
 # Paso 2: Añadir MongoDB a la aplicacion
 
-  rhc cartridge add mongodb-2.4 --app ServerGeome
+    rhc cartridge add mongodb-2.4 --app ServerGeome
 
 Podemos ver el estado con el siguiente comando:
 
-  rhc cartridge status mongodb-2.4 --app ServerGeome
+    rhc cartridge status mongodb-2.4 --app ServerGeome
 
 # Paso 3: Borramos el código fuente
 
@@ -30,7 +30,7 @@ Hacemos commit:
 
 # Paso 5: Comprobar funcionamiento
 
-Una vez subidos los cambios podemos ver el estado del servidor desde la URL: http://ServerGeome-<namespace>.rhcloud.com/manage/health
+Una vez subidos los cambios podemos ver el estado del servidor desde la URL: http://ServerGeome-NOMBREUSUARIO.rhcloud.com/manage/health
 
 	{
 		"status": "UP",
