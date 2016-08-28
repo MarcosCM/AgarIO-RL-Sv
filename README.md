@@ -24,7 +24,7 @@ Hacemos commit:
 
 # Paso 4: Push del nuevo código
 
-    git remote add upstream <URL de GIT>
+    git remote add upstream https://github.com/JorgeCoke/GeoMe-Servidor.git
     git pull -s recursive -X theirs upstream master
     git push
 
