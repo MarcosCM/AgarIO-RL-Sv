@@ -6,6 +6,8 @@ GeoMe es un proyecto basado en una aplicación para dispositivos móviles Androi
 
 Además de generar alertas, la aplicación muestra en tiempo real la ubicación de los usuarios alrededor de la ubicación del cliente en un mapa ofrecido por el servicio de Google Maps.
 
+Diapositivas: https://docs.google.com/presentation/d/1AIHIQbhEs_2H_SFNZ_Mzjx0BFYNIqm5h-QFn7WPggGw/pub?start=false&loop=false&delayms=3000
+
 ## Tecnologías Servidor:
 
 - Spring Framework
