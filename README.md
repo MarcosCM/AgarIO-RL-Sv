@@ -44,12 +44,4 @@ Hacemos commit:
     git pull -s recursive -X theirs upstream master
     git push
 
-### Paso 5: Comprobar funcionamiento
-
-Una vez subidos los cambios podemos ver el estado del servidor desde la URL: http://ServerGeome-NOMBREUSUARIO.rhcloud.com/manage/health
-
-	{
-		"status": "UP",
-		"database": "MongoDB",
-		"hello": 1
-	}
+Una vez subidos los cambios podemos ver el servidor desde la URL: http://ServerGeome-NOMBREUSUARIO.rhcloud.com/
