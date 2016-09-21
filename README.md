@@ -47,3 +47,7 @@ Hacemos commit:
     git push
 
 Una vez subidos los cambios podemos ver el servidor desde la URL: http://ServerGeome-NOMBREUSUARIO.rhcloud.com/
+
+Para ver los logs:
+
+    rhc <app-name> tail
