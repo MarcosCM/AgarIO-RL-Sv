@@ -1,0 +1,44 @@
+buildscript {
+  repositories {
+	mavenCentral()
+	maven { url 'http://repo.spring.io/release' }
+  }
+  dependencies {
+    classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'spring-boot'
+
+mainClassName = 'sv.Application'
+
+repositories {
+    mavenCentral()
+    maven { url 'http://repo.spring.io/release' }
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE'
+    compile 'org.springframework.plugin:spring-plugin-core'
+    compile 'org.springframework.boot:spring-boot-starter-ws'
+    
+    compile 'org.springframework.boot:spring-boot-starter-data-rest'
+    compile 'org.springframework.data:spring-data-mongodb:1.8.4.RELEASE'
+	
+    // Provides java script libraries for static content
+    compile 'org.glassfish.jersey.core:jersey-server:2.22.2'
+	
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.0'
+    
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.21'
+
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'commons-validator:commons-validator:1.5.0'
+    compile 'com.google.guava:guava:20.0'
+
+    compile files('lib/jaunt1.1.6.jar')
+}
