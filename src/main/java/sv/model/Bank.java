@@ -13,10 +13,12 @@ public class Bank {
     private double[] location;
 	
 	private int numBalls;
+	private boolean hasVirus;
 	
 	public Bank(double[] location){
 		this.location = location;
 		this.numBalls = 0;
+		this.hasVirus = false;
 	}
 	
 	public double[] getLocation(){
@@ -34,4 +36,8 @@ public class Bank {
 	public void setNumBalls(int numBalls){
 		this.numBalls = numBalls;
 	}
+
+	public boolean hasVirus() { return this.hasVirus; }
+
+	public void setVirus(boolean state) { this.hasVirus = state; }
 }
