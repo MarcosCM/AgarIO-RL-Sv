@@ -8,8 +8,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Geome</name>
-    <description>Geome</description>
+    <name>AgarIORL</name>
+    <description>AgarIORL</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
