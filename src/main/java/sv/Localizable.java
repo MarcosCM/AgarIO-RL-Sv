@@ -1,4 +1,4 @@
-package sv.model;
+package sv;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
@@ -9,38 +9,48 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 
 @Document(collection = "locations")
-public class User {
+public class Localizable {
 
     @Id
     private String id;
     private int mass;
     @GeoSpatialIndexed
     private double[] location; //Indexamos BD por localicacion
+    private String type;
 
-    public User (){
+	public Localizable(){
         //Contructor vacio para parser Jackson JSON/HATEOAS
     }
 
-    public User (int mass, double[] location){
+    public Localizable (int mass, double[] location, String type){
         this.mass = mass;
         this.location = location;
+        this.type = type;
     }
+    
+	public int getMass() {
+		return mass;
+	}
 
-    public int getType() {
-        return mass;
-    }
+	public void setMass(int mass) {
+		this.mass = mass;
+	}
 
-    public void setType(int mass) {
-        this.mass = mass;
-    }
+	public double[] getLocation() {
+		return location;
+	}
 
-    public double[] getLocation() {
-        return location;
-    }
+	public void setLocation(double[] location) {
+		this.location = location;
+	}
 
-    public void setLocation (double [] location){
-        this.location = location;
-    }
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
     @Override
     public String toString() {
