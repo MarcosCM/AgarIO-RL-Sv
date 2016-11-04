@@ -13,25 +13,25 @@ public class User {
 
     @Id
     private String id;
-    private int type; //Tipo de usuario (0 = coche, 1 = bicicleta, 2 = peaton)
+    private int mass;
     @GeoSpatialIndexed
-    private double[] location; 	//Indexamos BD por localicacion
+    private double[] location; //Indexamos BD por localicacion
 
     public User (){
-        //Contructor vacío para parser Jackson JSON/HATEOAS
+        //Contructor vacio para parser Jackson JSON/HATEOAS
     }
 
     public User (int type, double[] location){
-        this.type = type;
+        this.mass = type;
         this.location = location;
     }
 
     public int getType() {
-        return type;
+        return mass;
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.mass = type;
     }
 
     public double[] getLocation() {
@@ -44,6 +44,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User(type = "+type+", location = " + location[0] + " - " + location[1] + ")";
+        return "User(type = "+mass+", location = " + location[0] + " - " + location[1] + ")";
     }
 }
