@@ -1,20 +1,12 @@
-![alt tag](https://raw.githubusercontent.com/JorgeCoke/GeoMe-Cliente/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png)
-
-# Proyecto GeoMe
-
-GeoMe es un proyecto basado en una aplicación para dispositivos móviles Android cuya finalidad principal es prevenir accidentes, enviando alertas en tiempo real al usuario basándose en la posición geográfica proporcionada por los propios usuarios cercanos al cliente. 
-
-Además de generar alertas, la aplicación muestra en tiempo real la ubicación de los usuarios alrededor de la ubicación del cliente en un mapa ofrecido por el servicio de Google Maps.
-
-Presentación: http://goo.gl/tY4hgf
+# AgarIO in Real Life
 
 ## Tecnologías Servidor:
 
 - Spring Framework
-- MognoDB
+- MongoDB
 - JSON-HATEOAS
 
-***El Cliente esta disponible en este enlace: *** https://github.com/JorgeCoke/GeoMe-Cliente
+***El Cliente esta disponible en este enlace: *** https://github.com/JorgeCoke/AgarIO-RL-Cl
 
 ## Despliegue Openshift
 
@@ -22,15 +14,15 @@ El servidor esta preparado para desplegarlo en OpenShift, aunque tambien se pued
 
 ### Paso 1: Crear aplicacion DIY
 
-    rhc app create ServerGeome diy-0.1
+    rhc app create ServerAgarIORL diy-0.1
 
 ### Paso 2: Añadir MongoDB a la aplicacion
 
-    rhc cartridge add mongodb-2.4 --app ServerGeome
+    rhc cartridge add mongodb-2.4 --app ServerAgarIORL
 
 Podemos ver el estado con el siguiente comando:
 
-    rhc cartridge status mongodb-2.4 --app ServerGeome
+    rhc cartridge status mongodb-2.4 --app ServerAgarIORL
 
 ### Paso 3: Borramos el código fuente
 
@@ -42,11 +34,11 @@ Hacemos commit:
 
 ### Paso 4: Push del nuevo código
 
-    git remote add upstream https://github.com/JorgeCoke/GeoMe-Servidor.git
+    git remote add upstream https://github.com/JorgeCoke/AgarIO-RL-Sv.git
     git pull -s recursive -X theirs upstream master
     git push
 
-Una vez subidos los cambios podemos ver el servidor desde la URL: http://ServerGeome-NOMBREUSUARIO.rhcloud.com/
+Una vez subidos los cambios podemos ver el servidor desde la URL: http://ServerAgarIORL-NOMBREUSUARIO.rhcloud.com/
 
 Para ver los logs:
 
