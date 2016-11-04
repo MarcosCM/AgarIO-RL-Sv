@@ -21,8 +21,8 @@ public class User {
         //Contructor vacio para parser Jackson JSON/HATEOAS
     }
 
-    public User (int type, double[] location){
-        this.mass = type;
+    public User (int mass, double[] location){
+        this.mass = mass;
         this.location = location;
     }
 
@@ -30,8 +30,8 @@ public class User {
         return mass;
     }
 
-    public void setType(int type) {
-        this.mass = type;
+    public void setType(int mass) {
+        this.mass = mass;
     }
 
     public double[] getLocation() {
@@ -44,6 +44,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User(type = "+mass+", location = " + location[0] + " - " + location[1] + ")";
+        return "User(mass = "+mass+", location = " + location[0] + " - " + location[1] + ")";
     }
 }
