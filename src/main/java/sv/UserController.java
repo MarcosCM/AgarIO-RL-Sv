@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,22 +37,28 @@ public class UserController {
     public final List<Localizable> getLocations(
             @RequestParam("lat") String lat,
             @RequestParam("lon") String lon,
-            @RequestParam("r") double radio) {
+            @RequestParam("r") double r) {
 
         return this.localizableRepository.findByLocationNear(
                 new Point(Double.valueOf(lat), Double.valueOf(lon)),
-                new Distance(radio, Metrics.KILOMETERS));
+                new Distance(r, Metrics.KILOMETERS));
 
     }
     
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{lat}/{lon}/", method = RequestMethod.DELETE)
     public final ResponseEntity<String> deleteBalls(
-            @RequestParam("lat") String lat,
-            @RequestParam("lon") String lon) {
-
-        this.localizableRepository.deleteByLocation(new double[]{
-        		Double.valueOf(lat), Double.valueOf(lon)
-        });
+            @PathVariable("lat") String lat,
+            @PathVariable("lon") String lon) {
+    	
+    	List<Localizable> l = localizableRepository.findAll();
+    	Localizable del = null;
+    	for(Localizable lo : l){
+    		if (lo.getLocation()[0] == Double.valueOf(lat) && lo.getLocation()[1] == Double.valueOf(lon)){
+    			del = lo;
+    			break;
+    		}
+    	}
+    	localizableRepository.delete(del);
         
         return new ResponseEntity<String>(HttpStatus.OK);
     }
@@ -73,8 +80,8 @@ public class UserController {
 		this.localizableRepository.insert(new Localizable(0, location, "virus"));
 	}
 	
-	@Async
-	@Scheduled(fixedRate = 3000000)
+	//@Async
+	//@Scheduled(fixedRate = 3000000)
 	public void periodicTask(){
 		if (!localizableRepository.findAll().isEmpty()) return;
 		// insert banks
