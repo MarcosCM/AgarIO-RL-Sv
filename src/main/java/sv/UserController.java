@@ -80,8 +80,7 @@ public class UserController {
 		this.localizableRepository.insert(new Localizable(0, location, "virus"));
 	}
 	
-	//@Async
-	//@Scheduled(fixedRate = 3000000)
+	@Scheduled(fixedRate = 3000000)
 	public void periodicTask(){
 		if (!localizableRepository.findAll().isEmpty()) return;
 		// insert banks
