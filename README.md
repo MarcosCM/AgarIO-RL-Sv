@@ -1,9 +1,13 @@
 # AgarIO in Real Life
 
-## Tecnologías Servidor:
+## Technologies:
 
 - Spring Framework
 - MongoDB
 - JSON-HATEOAS
 
-***El Cliente esta disponible en este enlace: *** https://github.com/JorgeCoke/AgarIO-RL-Cl
+***Client link: *** https://github.com/JorgeCoke/AgarIO-RL-Cl
+
+## Deployment
+
+The server is available in http://52.28.76.182:8080
