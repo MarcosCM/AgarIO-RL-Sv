@@ -127,7 +127,7 @@ public class UserController {
 		balls.add(new Localizable(5, new double[]{41.417548, 2.208535}, "ball"));
 		balls.add(new Localizable(5, new double[]{41.417343, 2.208648}, "ball"));
 		balls.add(new Localizable(5, new double[]{41.417146, 2.208460}, "ball"));
-		balls.add(new Localizable(5, new double[]{41.417062, 2.208074}, "ball"));
+		balls.add(new Localizable(5, new double[]{41.417045, 2.208409}, "ball"));
 		localizableRepository.insert(balls);
 	}
 }
