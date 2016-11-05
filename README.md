@@ -1,4 +1,4 @@
-# AgarIO in Real Life
+# AgarIO in Real Life - Server
 
 ## Technologies:
 
