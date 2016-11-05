@@ -108,7 +108,7 @@ public class UserController {
 	
 	@Scheduled(fixedRate = 3000000)
 	public void periodicTask(){
-		if (!localizableRepository.findAll().isEmpty()) return;
+		//if (!localizableRepository.findAll().isEmpty()) return;
 		// insert banks
 		List<Localizable> banks = new ArrayList<Localizable>();
 		banks.add(new Localizable(0, new double[]{41.4193647, 2.2057816}, "bank"));
