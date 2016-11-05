@@ -18,5 +18,5 @@ public interface LocalizableRepository extends MongoRepository<Localizable, Stri
     List<Localizable> findByLocationNear(Point p, Distance d);
     List<Localizable> findByType(String type);
     Long countByLocationNear(Point p, Distance d);
-    String deleteLocalizableByLocation(Point p);
+    String deleteByLocation(double[] location);
 }

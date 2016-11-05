@@ -82,6 +82,8 @@ public class UserController {
     			break;
     		}
     	}
+    	
+    	//localizableRepository.deleteByLocation(new double[]{Double.valueOf(lat), Double.valueOf(lon)});
     	localizableRepository.delete(del);
         
         return new ResponseEntity<String>(HttpStatus.OK);
@@ -120,5 +122,12 @@ public class UserController {
 		for(Localizable b : banks){
 			randomGen(b, 15);
 		}
+		
+		List<Localizable> balls = new ArrayList<Localizable>();
+		balls.add(new Localizable(5, new double[]{41.417548, 2.208535}, "ball"));
+		balls.add(new Localizable(5, new double[]{41.417343, 2.208648}, "ball"));
+		balls.add(new Localizable(5, new double[]{41.417146, 2.208460}, "ball"));
+		balls.add(new Localizable(5, new double[]{41.417062, 2.208074}, "ball"));
+		localizableRepository.insert(balls);
 	}
 }
