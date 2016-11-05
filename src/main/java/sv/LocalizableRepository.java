@@ -16,5 +16,7 @@ public interface LocalizableRepository extends MongoRepository<Localizable, Stri
 
     //List<User> findByLastName(@Param("name") String name);
     List<Localizable> findByLocationNear(Point p, Distance d);
+    List<Localizable> findByType(String type);
+    Long countByLocationNear(Point p, Distance d);
     String deleteLocalizableByLocation(Point p);
 }

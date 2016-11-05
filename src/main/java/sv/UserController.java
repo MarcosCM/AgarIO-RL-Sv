@@ -45,6 +45,30 @@ public class UserController {
 
     }
     
+    @RequestMapping(value = "/bestBank", method = RequestMethod.GET)
+    public final Localizable getBestBank() {
+
+    	List<Localizable> l = localizableRepository.findByType("bank");
+    	Localizable best = null;
+    	Long n = 0L;
+    	Long aux;
+    	for(Localizable lo : l){
+    		if (best == null){
+    			best = lo;
+    			n = localizableRepository.countByLocationNear(new Point(lo.getLocation()[0], lo.getLocation()[1]), new Distance(0.3, Metrics.KILOMETERS));
+    			continue;
+    		}
+    		
+    		aux = localizableRepository.countByLocationNear(new Point(lo.getLocation()[0], lo.getLocation()[1]), new Distance(0.3, Metrics.KILOMETERS));
+    		if (aux > n){
+    			n = aux;
+    			best = lo;
+    		}
+    	}
+    	
+    	return best;
+    }
+    
     @RequestMapping(value = "/{lat}/{lon}/", method = RequestMethod.DELETE)
     public final ResponseEntity<String> deleteBalls(
             @PathVariable("lat") String lat,
